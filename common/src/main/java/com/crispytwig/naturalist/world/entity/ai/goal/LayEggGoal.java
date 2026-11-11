@@ -6,6 +6,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.ai.goal.MoveToBlockGoal;
+import com.crispytwig.naturalist.world.entity.animal.snail.Snail;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
@@ -59,7 +60,8 @@ public class LayEggGoal<T extends Animal & EggLayingAnimal> extends MoveToBlockG
                 this.animal.onEggLaid(eggPos);
                 this.animal.setHasEgg(false);
                 this.animal.setLayingEgg(false);
-                this.animal.setInLoveTime(600);
+                // Snails must be fed again to breed; re-arming love here made them breed endlessly.
+                if (!(this.animal instanceof Snail)) this.animal.setInLoveTime(600);
             }
 
             if (this.animal.isLayingEgg()) {

@@ -85,7 +85,7 @@ public class SnailEggBlock extends Block {
     }
 
     private void spawnBabySnails(ServerLevel level, @NotNull BlockPos pos, RandomSource random) {
-        int i = random.nextInt(2, 6);
+        int i = random.nextInt(1, 3);
 
         for(int j = 1; j <= i; ++j) {
             Snail snail = NaturalistEntityTypes.SNAIL.get().create(level, EntitySpawnReason.BREEDING);

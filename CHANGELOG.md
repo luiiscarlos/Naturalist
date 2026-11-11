@@ -5,3 +5,4 @@
 - Lion Spawn Eggs can now spawn male Lions.
 - Fixed Hippos sinking and staying underwater, causing baby Hippos to drown.
 - Hippos can now climb out of water to chase you onto land.
+- Reduced Snail spawn rate and reproduction (no endless re-breeding, fewer hatchlings).
